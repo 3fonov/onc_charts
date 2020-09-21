@@ -1,0 +1,49 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
+    <link rel="stylesheet" href="node_modules/milligram/dist/milligram.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-stock.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-data-adapter.min.js"></script>
+    <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css" type="text/css" rel="stylesheet">
+    <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css" type="text/css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js">
+    </script>
+</head>
+
+<body>
+    <div class="container" id="app">
+
+        <div class="row">
+            <div class="column column-20">
+                <ul>
+                    <li v-for="t in tickers" v-on:click="loadTicker(t)" v-bind:class="{ activeTicker: t.ticker == ticker.ticker }">
+                        {{ t.ticker}}
+                    </li>
+                    <li v-on:click="draw()">Draw</li>
+                </ul>
+            </div>
+            <div class="column column-80">
+                <div id="chart_container"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Add your site or application content here -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

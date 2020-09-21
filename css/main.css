@@ -1,0 +1,8 @@
+.activeTicker {
+  font-weight: bold;
+}
+#chart_container {
+  width: 100%;
+  height: 100vh;
+  margin-bottom: 10px;
+}
